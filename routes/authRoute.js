@@ -4,6 +4,7 @@ const { signup, login } = require("../controllers/auth");
 const route = express.Router();
 
 route.post("/signup", async (req, res) => {
+  console.log(req.body);
   const { error } = await signup(req.body);
   if (error) {
     console.log(error);
